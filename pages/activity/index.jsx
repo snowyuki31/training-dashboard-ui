@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Layout from "../components/layout";
+import Layout from "../../components/layout";
 
 const Index = (props) => {
   var list = [];
@@ -15,7 +15,7 @@ const Index = (props) => {
 
   return (
     <Layout>
-      <h1>Data Summary</h1>
+      <ul>{list}</ul>
     </Layout>
   );
 };
