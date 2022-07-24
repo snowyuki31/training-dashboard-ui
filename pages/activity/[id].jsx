@@ -1,11 +1,12 @@
 import { useRouter } from "next/router";
 import { Area, AreaChart, Tooltip, XAxis, YAxis } from "recharts";
+import Layout from "../../components/layout";
 
 const Activity = (props) => {
   const router = useRouter();
   const data = props.data;
   return (
-    <>
+    <Layout>
       <h1>Activity {props.id}</h1>
       <h2>Summary</h2>
       <p>
@@ -42,7 +43,7 @@ const Activity = (props) => {
       </AreaChart>
 
       <div onClick={() => router.back()}>Back</div>
-    </>
+    </Layout>
   );
 };
 
