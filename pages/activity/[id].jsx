@@ -9,7 +9,8 @@ const Activity = (props) => {
       <h1>Activity {props.id}</h1>
       <h2>Summary</h2>
       <p>
-        HeartRate: (Avg){data.mean.heart_rate} BPM, (Max){data.max.heart_rate}
+        HeartRate: (Avg){data.mean.heart_rate} BPM, (Max){data.max.heart_rate}{" "}
+        BPM
       </p>
       <p>
         Power: (Avg){data.mean.watts} W, (Max){data.max.watts} W
