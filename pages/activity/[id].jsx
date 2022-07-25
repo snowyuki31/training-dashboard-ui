@@ -7,7 +7,9 @@ const Activity = (props) => {
   return (
     <Layout>
       <Flex>
-        <Box h="10">Activity {props.id}</Box>
+        <Box h="10">
+          Activity {props.id}, {data.id}
+        </Box>
       </Flex>
       <Flex>
         <Box h="10">
@@ -19,6 +21,9 @@ const Activity = (props) => {
         <Box h="10">
           Power: (Avg){data.mean.watts} W, (Max){data.max.watts} W
         </Box>
+      </Flex>
+      <Flex>
+        <Box h="10">Normalized Power: {data.metric.np} W</Box>
       </Flex>
       <Flex>
         <AreaChart

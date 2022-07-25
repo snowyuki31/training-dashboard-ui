@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
       <GridItem pl="2" bg="white.300" area={"header"}>
         <Navbar />
       </GridItem>
-      <GridItem p="10" bg="white" area={"main"}>
+      <GridItem pl="10" bg="white" area={"main"}>
         {children}
       </GridItem>
       <GridItem pl="2" bg="silver" area={"footer"}>
