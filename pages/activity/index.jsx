@@ -1,21 +1,22 @@
 import Link from "next/link";
-import Layout from "../components/layout";
+import Layout from "../../components/layout";
+import { Stack, Box } from "@chakra-ui/react";
 
 const Index = (props) => {
   var list = [];
   props.data.activities.forEach((element, index) =>
     list.push(
-      <li key={index}>
+      <Box p={2}>
         <Link href={"/activity/" + element}>
           <a>{element}</a>
         </Link>
-      </li>
+      </Box>
     )
   );
 
   return (
     <Layout>
-      <h1>Data Summary</h1>
+      <Stack>{list}</Stack>
     </Layout>
   );
 };
