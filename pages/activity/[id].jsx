@@ -9,6 +9,7 @@ import {
 } from "recharts";
 import Layout from "../../components/templates/layout";
 import StatusBox from "../../components/molecules/statusbox";
+import StatsBox from "../../components/molecules/statsbox";
 
 const Activity = (props) => {
   const data = props.data;
@@ -24,7 +25,7 @@ const Activity = (props) => {
           </Heading>
         </Flex>
       </Stack>
-      <Flex py={4}>
+      <Flex pt={4} pb={2}>
         <StatusBox
           title="Average"
           values={{ heart_rate: data.mean.heart_rate, watts: data.mean.watts }}
@@ -33,7 +34,9 @@ const Activity = (props) => {
           title="Max"
           values={{ heart_rate: data.max.heart_rate, watts: data.max.watts }}
         />
-        <StatusBox title="Normalized Power" values={{ np: data.metric.np }} />
+      </Flex>
+      <Flex>
+        <StatsBox title="Stats" values={{ metric: data.metric }} />
       </Flex>
 
       <Stack>

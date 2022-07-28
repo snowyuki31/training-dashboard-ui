@@ -1,16 +1,26 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faBolt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHeart,
+  faBolt,
+  faFireFlameCurved,
+  faArrowDownUpAcrossLine,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Status = (props) => {
   var icon;
   if (props.icon == "heart") {
-    icon = faHeart;
-  } else {
-    icon = faBolt;
+    icon = <FontAwesomeIcon icon={faHeart} />;
+  } else if (props.icon == "power") {
+    icon = <FontAwesomeIcon icon={faBolt} />;
+  } else if (props.icon == "flame") {
+    icon = <FontAwesomeIcon icon={faFireFlameCurved} />;
+  } else if (props.icon == "trend") {
+    icon = <FontAwesomeIcon icon={faArrowDownUpAcrossLine} />;
   }
+
   return (
     <>
-      <FontAwesomeIcon icon={icon} />
+      {icon}
       {props.text}
     </>
   );
