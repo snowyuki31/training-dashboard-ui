@@ -1,4 +1,4 @@
-import { Flex, Box, Heading, Stack } from "@chakra-ui/react";
+import { Flex, Heading, Stack } from "@chakra-ui/react";
 import {
   Area,
   AreaChart,
@@ -7,9 +7,8 @@ import {
   YAxis,
   ResponsiveContainer,
 } from "recharts";
-import Layout from "../../components/layout";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faBolt } from "@fortawesome/free-solid-svg-icons";
+import Layout from "../../components/templates/layout";
+import StatusBox from "../../components/molecules/statusbox";
 
 const Activity = (props) => {
   const data = props.data;
@@ -26,54 +25,15 @@ const Activity = (props) => {
         </Flex>
       </Stack>
       <Flex py={4}>
-        <Flex
-          borderRadius="md"
-          borderWidth="1px"
-          borderColor="gray.500"
-          overflow="hidden"
-          px={4}
-        >
-          <Box p={2}>Average</Box>
-          <Box p={2} color="tomato">
-            <FontAwesomeIcon icon={faHeart} />
-            {data.mean.heart_rate}
-          </Box>
-          <Box p={2} color="#8884d8">
-            <FontAwesomeIcon icon={faBolt} />
-            {data.mean.watts}
-          </Box>
-        </Flex>
-        <Flex
-          borderRadius="md"
-          borderWidth="1px"
-          borderColor="gray.500"
-          overflow="hidden"
-          px={4}
-          mx={1}
-        >
-          <Box p={2}>Max</Box>
-          <Box p={2} color="tomato">
-            <FontAwesomeIcon icon={faHeart} />
-            {data.max.heart_rate}
-          </Box>
-          <Box p={2} color="#8884d8">
-            <FontAwesomeIcon icon={faBolt} />
-            {data.max.watts}
-          </Box>
-        </Flex>
-
-        <Flex
-          borderRadius="md"
-          borderWidth="1px"
-          borderColor="gray.500"
-          overflow="hidden"
-          px={4}
-        >
-          <Box p={2}>
-            Normalized Power <FontAwesomeIcon icon={faBolt} />
-            {data.metric.np}
-          </Box>
-        </Flex>
+        <StatusBox
+          title="Average"
+          values={{ heart_rate: data.mean.heart_rate, watts: data.mean.watts }}
+        />
+        <StatusBox
+          title="Max"
+          values={{ heart_rate: data.max.heart_rate, watts: data.max.watts }}
+        />
+        <StatusBox title="Normalized Power" values={{ np: data.metric.np }} />
       </Flex>
 
       <Stack>
