@@ -25,6 +25,7 @@
     "recharts": "^2.1.12"
   },
   "devDependencies": {
+    "babel-plugin-root-import": "^6.6.0",
     "eslint": "8.20.0",
     "eslint-config-next": "12.2.3"
   }

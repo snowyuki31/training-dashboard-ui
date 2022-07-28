@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Layout from "../../components/layout";
+import Layout from "../../components/templates/layout";
 import { Stack, Box } from "@chakra-ui/react";
 
 const Index = (props) => {
